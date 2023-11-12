@@ -4,9 +4,10 @@
   "description": "",
   "main": "./server/server.js",
   "scripts": {
+    "install:client": "cd ./client && npm i",
     "install:server": "cd ./server && npm i",
-    "install": "npm run install:server",
-    "start:client": "cd ./server && npm run start",
+    "install": "concurrently \"npm run install:server\" \"npm run install:client\"",
+    "start:client": "cd ./server && npm run build",
     "start:server": "cd ./client && npm run server",
     "start": "concurrently \"npm run start:server\" \"npm run start:client\""
   },
