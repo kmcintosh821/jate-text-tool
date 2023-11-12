@@ -18,7 +18,6 @@ butInstall.addEventListener('click', async () => {
     disableInAppInstall();
 });
 
-// TODO: Add an handler for the `appinstalled` event
 window.addEventListener('appinstalled', (event) => {
     disableInAppInstall();
 });
