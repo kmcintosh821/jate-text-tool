@@ -5,7 +5,6 @@ let installPrompt;
 window.addEventListener('beforeinstallprompt', (event) => {
     event.preventDefault();
     installPrompt = event;
-    butInstall.style.display = 'block';
 });
 
 butInstall.addEventListener('click', async () => {
