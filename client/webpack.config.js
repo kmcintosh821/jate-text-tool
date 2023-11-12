@@ -10,17 +10,17 @@ module.exports = () => {
   return {
     mode: 'development',
     entry: {
-      main: './src/js/index.js',
-      install: './src/js/install.js',
+      main: 'src/js/index.js',
+      install: 'src/js/install.js',
     },
     output: {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      new HtmlWebpackPlugin({ template: './index.html'}),
+      new HtmlWebpackPlugin({ template: 'index.html'}),
       new InjectManifest({
-        swSrc: './src-sw.js',
+        swSrc: 'src-sw.js',
         swDest: 'src-sw.js'
       }),
       new WebpackPwaManifest({
@@ -31,7 +31,7 @@ module.exports = () => {
         theme_color: '#31a9e1',
         crossorigin: 'anonymous',
         icons: [{
-          src: path.resolve('./src/images/logo.png'),
+          src: path.resolve('src/images/logo.png'),
           sizes: [96, 128, 192, 256, 384, 500],
           destination: path.join('icons')
         }]
