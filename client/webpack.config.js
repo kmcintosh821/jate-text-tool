@@ -10,8 +10,8 @@ module.exports = () => {
   return {
     mode: 'development',
     entry: {
-      main: 'src/js/index.js',
-      install: 'src/js/install.js',
+      main: './src/js/index.js',
+      install: './src/js/install.js',
     },
     output: {
       filename: '[name].bundle.js',
@@ -20,8 +20,8 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({ template: 'index.html'}),
       new InjectManifest({
-        swSrc: 'src-sw.js',
-        swDest: 'src-sw.js'
+        swSrc: './src-sw.js',
+        swDest: 'service-worker.js'
       }),
       new WebpackPwaManifest({
         name: 'Just Another Text Editor',
@@ -32,8 +32,7 @@ module.exports = () => {
         crossorigin: 'anonymous',
         icons: [{
           src: path.resolve('src/images/logo.png'),
-          sizes: [96, 128, 192, 256, 384, 500],
-          destination: path.join('icons')
+          sizes: [96, 128, 192, 256, 384, 500]
         }]
       })
     ],
