@@ -9,7 +9,7 @@
     "install": "concurrently \"npm run install:server\" \"npm run install:client\" --production=false",
     "start:client": "cd ./client && npm run build",
     "start:server": "cd ./server && npm run start",
-    "start": "concurrently \"npm run start:server\" \"npm run start:client\""
+    "start": "concurrently \"npm run start:client\" \"npm run start:server\""
   },
   "keywords": [],
   "author": "",
