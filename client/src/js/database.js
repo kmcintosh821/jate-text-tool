@@ -15,7 +15,7 @@ const initdb = async () =>
 export const putDb = async (content) => {
   const db = await openDB('jate', 1);
   const action = db.transaction('jate', 'readwrite');
-  await action.store.put(content);
+  await action.objectStore('jate').put({value: content, id: 1});
   await action.done;
   console.log('Data added to JATE database!')
 }
@@ -23,10 +23,10 @@ export const putDb = async (content) => {
 export const getDb = async () => {
   const db = await openDB('jate', 1);
   const action = db.transaction('jate', 'readonly');
-  const content = await action.store.getAll();
+  const data = await action.objectStore('jate').get(1);
   await action.done;
   console.log('Data retrieved!')
-  return data;
+  return data?.value;
 }
 
 initdb();

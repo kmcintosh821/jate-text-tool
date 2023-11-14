@@ -8,10 +8,10 @@ window.addEventListener('beforeinstallprompt', (event) => {
 });
 
 butInstall.addEventListener('click', async () => {
-    if (!installPrompt) {
-        return;
-    }
-    const result = await installPrompt.prompt();
+    if (installPrompt)
+    installPrompt.prompt();
+    const result = await installPrompt.userChoice;
+    
     console.log(`Response: ${result.outcome}`);
 
     disableInAppInstall();

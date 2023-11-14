@@ -6,7 +6,7 @@
   "scripts": {
     "install:client": "cd ./client && npm i",
     "install:server": "cd ./server && npm i",
-    "install": "concurrently \"npm run install:server\" \"npm run install:client\"",
+    "install": "concurrently \"npm run install:server\" \"npm run install:client\" --production=false",
     "start:client": "cd ./client && npm run build",
     "start:server": "cd ./server && npm run start",
     "start": "concurrently \"npm run start:server\" \"npm run start:client\""
